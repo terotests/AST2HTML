@@ -154,7 +154,7 @@
             if (visitCnt > 100) classStr += " plus100visits ";
 
             me._outHTML += "<div class='" + classStr + "' visitCnt='" + visitCnt + "'>";
-            if (i > 0) outHTML += "&nbsp;";
+            if (i > 0) me._outHTML += "&nbsp;";
             me._outHTML += a;
             me._outHTML += "</div>";
           });
