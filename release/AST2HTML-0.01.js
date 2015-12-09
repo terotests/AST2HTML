@@ -149,9 +149,9 @@
             } else {
               classStr += " visited ";
             }
-            if (visitCnt > 10) classStr += " plus10visits ";
-            if (visitCnt > 50) classStr += " plus50visits ";
-            if (visitCnt > 100) classStr += " plus100visits ";
+            if (visitCnt >= 10) classStr += " plus10visits ";
+            if (visitCnt >= 50) classStr += " plus50visits ";
+            if (visitCnt >= 100) classStr += " plus100visits ";
 
             me._outHTML += "<div class='" + classStr + "' visitCnt='" + visitCnt + "'>";
             if (i > 0) me._outHTML += "&nbsp;";
