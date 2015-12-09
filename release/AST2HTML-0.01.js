@@ -78,12 +78,16 @@
 
         this._outHTML = "";
         console.log("--> starting the walk to createHtml");
-        this._walker.startWalk(rawAST, {
-          functions: {},
-          vars: {},
-          variables: {}
-        });
-
+        try {
+          this._walker.startWalk(rawAST, {
+            functions: {},
+            vars: {},
+            variables: {}
+          });
+        } catch (e) {
+          console.log(e);
+        }
+        console.log("--> finished the walk");
         return this._outHTML;
       };
 
