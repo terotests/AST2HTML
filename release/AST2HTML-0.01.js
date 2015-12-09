@@ -74,6 +74,9 @@
        * @param Object rawAST  - AST code to parse
        */
       _myTrait_.createHtml = function (rawAST) {
+
+        if (!this._walker) return "No ASTWalker given as parameter to AST2HTML";
+
         this._outHTML = "";
         this._walker.startWalk(rawAST, {
           functions: {},
