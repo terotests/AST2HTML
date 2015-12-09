@@ -71,9 +71,17 @@
       // Initialize static variables here...
 
       /**
-       * @param float t
+       * @param Object rawAST  - AST code to parse
        */
-      _myTrait_.createHtml = function (t) {};
+      _myTrait_.createHtml = function (rawAST) {
+        this._outHTML = "";
+        this._walker.startWalk(rawAST, {
+          functions: {},
+          vars: {}
+        });
+
+        return this._outHTML;
+      };
 
       if (_myTrait_.__traitInit && !_myTrait_.hasOwnProperty("__traitInit")) _myTrait_.__traitInit = _myTrait_.__traitInit.slice();
       if (!_myTrait_.__traitInit) _myTrait_.__traitInit = [];
