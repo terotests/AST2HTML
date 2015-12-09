@@ -71,13 +71,13 @@
       // Initialize static variables here...
 
       /**
-       * @param Object rawAST  - AST code to parse
+       * @param Object rawAST
        */
-      _myTrait_.createHtml = function (rawAST) {
-
+      _myTrait_.getHTML = function (rawAST) {
         if (!this._walker) return "No ASTWalker given as parameter to AST2HTML";
 
         this._outHTML = "";
+        console.log("--> starting the walk to createHtml");
         this._walker.startWalk(rawAST, {
           functions: {},
           vars: {},
@@ -92,7 +92,9 @@
       _myTrait_.__traitInit.push(function (walker, options) {
 
         this._walker = walker;
-        this._options = options;
+        this._options = options || {};
+
+        var walker = this._walker;
 
         var currentNode, currentCtx;
         this._outHTML = "";
