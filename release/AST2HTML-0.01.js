@@ -80,7 +80,8 @@
         this._outHTML = "";
         this._walker.startWalk(rawAST, {
           functions: {},
-          vars: {}
+          vars: {},
+          variables: {}
         });
 
         return this._outHTML;
